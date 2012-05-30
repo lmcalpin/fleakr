@@ -52,10 +52,7 @@ module Fleakr
       end
 
       def send # :nodoc:
-        logger.info("Sending request to: #{endpoint_uri}")
         response_xml = Net::HTTP.get(endpoint_uri)
-        logger.debug("Response data:\n#{response_xml}")
-        
         Response.new(response_xml)
       end
       

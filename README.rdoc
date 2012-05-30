@@ -397,25 +397,11 @@ automatically scope your requests to the authenticated user:
 From there, you can make any of the usual calls available with the API. See
 Fleakr::Objects::User for more information.
 
-=== What Went Wrong?
+=== Changes
 
-Because so much of the underlying API is hidden under the covers, it's often tough to know
-what's really going on when you run into unexpected behavior.  To make things easier, you can
-have Fleakr log all of the API traffic.  Here's how:
+The following changes have been made from the original Fleakr gem:
 
-    Fleakr.logger = Logger.new('/tmp/fleakr.log')
-
-Now any calls to the API will log both their request and response data to that file.  But be
-warned, this can be pretty verbose by default (especially if you're doing file uploads).  To see
-just the requests you need to tune the log level:
-
-    logger = Logger.new('/tmp/fleakr.log')
-    logger.level = Logger::INFO
-
-    Fleakr.logger = logger
-
-Even if something doesn't go wrong, this is a good way to get a sense for when you're making
-API requests.
+* the dependency on the loggable gem was removed
 
 == Contributing
 
@@ -443,21 +429,6 @@ in this project enough to contribute their ideas and code:
 * {Björn Wolf}[http://github.com/we5]
 
 Thanks!
-
-== Roadmap / TODO
-
-=== 0.5.x
-
-* Implement remaining bits of person and photo-related API calls (read-only)
-* Provide a better searching interface with ruby-like option syntax
-
-=== Future
-
-* Implement asynchronous file upload / replacement w/ ticket checking
-* Implement save-able search results (e.g. Fleakr.search('ponies').save_to('/path', :medium))
-* Implement deeper associations for core elements (e.g. tags / etc..)
-* Implement write methods for photos & photosets
-* Implement flickr.places.* portion of API
 
 == License
 

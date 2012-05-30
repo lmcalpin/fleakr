@@ -9,7 +9,6 @@ require 'forwardable'
 
 require 'digest/md5'
 require 'fileutils'
-require 'loggable'
 
 require 'fleakr/support'
 require 'fleakr/api'
